@@ -1,0 +1,22 @@
+import pyautogui as gui
+import time
+#gui.click(308,1029)
+while True:
+    gui.hotkey('ctrl','c')
+    gui.click(1385,141)
+    gui.hotkey('ctrl','a')
+    gui.hotkey('ctrl','v')
+    gui.press('enter')
+    time.sleep(2)
+    gui.rightClick(2119,754)
+    time.sleep(0.5)
+    gui.click(2174,773)
+    gui.hotkey('alt','tab')
+    gui.press('right')
+    gui.press('right')
+    gui.press('right')
+    gui.hotkey('ctrl','v')
+    gui.press('down')
+    gui.press('left')
+    gui.press('left')
+    gui.press('left')
