@@ -9,7 +9,7 @@ Original file is located at
 START OF ACTUAL STUFF
 """
 
-!pip install FlightRadarAPI
+# !pip install FlightRadarAPI
 from math import cos, asin, sqrt, pi
 import pandas as pd
 import sys
@@ -18,7 +18,7 @@ import json
 from FlightRadar24.api import FlightRadar24API
 flight = FlightRadar24API()
 
-def distance(lat1, lon1, lat2, lon2):
+def distance(lat1, lat2, lon1, lon2):
     p = pi/180
     a = 0.5 - cos((lat2-lat1)*p)/2 + cos(lat1*p) * cos(lat2*p) * (1-cos((lon2-lon1)*p))/2
     return 12742 * asin(sqrt(a)) #2*R*asin...
@@ -42,7 +42,7 @@ for string in latlng.items():
   lng1 = float(string[1].split(", ")[1])
   if(distance(lat,lng,lat1,lng1) < min):
     airport_iata = df['IATA'][string[0]]
-    min = distance(lat,lng,lat1,lng1)
+    min = distance(lat,lat1,lng,lng1)
 
 params = {
   'api_key': '035d195b-2a63-4d2e-aa80-2223077e8f6e',
